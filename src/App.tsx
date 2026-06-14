@@ -1,7 +1,9 @@
+import { useState } from "react";
 import {
   ArrowUpRight,
   Award,
   BriefcaseBusiness,
+  CheckCircle2,
   Code2,
   Download,
   Eye,
@@ -12,9 +14,13 @@ import {
   Linkedin,
   Mail,
   MapPin,
+  MessageCircle,
+  PlayCircle,
   Rocket,
   ShieldCheck,
+  Sparkles,
   Wrench,
+  X,
 } from "lucide-react";
 
 const projects = [
@@ -27,6 +33,10 @@ const projects = [
     link: "https://github.com/llucass1998/sistema-chamados",
     image: "./projects/sistema-chamados-screen.png",
     video: "./videos/sistema-chamados.mp4",
+    highlights: [
+      "Fluxo separado para cliente, técnico e administrador.",
+      "Acompanhamento de status, comentários e anexos.",
+    ],
   },
   {
     title: "Street Foods",
@@ -37,6 +47,10 @@ const projects = [
     link: "https://github.com/llucass1998/ecomerce-lanches",
     image: "./projects/street-foods-screen.png",
     video: "./videos/street-foods.mp4",
+    highlights: [
+      "Cardápio, carrinho, checkout e acompanhamento do pedido.",
+      "Painel administrativo para produtos, pedidos e dados da loja.",
+    ],
   },
   {
     title: "TDB Barbearia",
@@ -47,6 +61,10 @@ const projects = [
     link: "https://github.com/llucass1998/barbearia-tdb",
     image: "./projects/tdb-barbearia-screen.png",
     video: "./videos/tdb-barbearia.mp4",
+    highlights: [
+      "Fila online pensada para o fluxo real da barbearia.",
+      "Painel com controle de atendimento e faturamento.",
+    ],
   },
   {
     title: "Sistema de Gestão Logística",
@@ -57,6 +75,10 @@ const projects = [
     link: "https://github.com/llucass1998/sistema-gestao-logistica",
     image: "./projects/logistica-screen.png",
     video: "./videos/projeto-next.mp4",
+    highlights: [
+      "Organização de dados operacionais e cadastros.",
+      "Base full stack para evoluir regras internas de logística.",
+    ],
   },
 ];
 
@@ -71,6 +93,21 @@ const skills = [
   "Git/GitHub",
   "APIs REST",
   "CSS responsivo",
+];
+
+const valueCards = [
+  {
+    title: "Interface com propósito",
+    text: "Crio telas pensando no usuário final: clareza, fluxo simples, responsividade e ações fáceis de encontrar.",
+  },
+  {
+    title: "Regra de negócio",
+    text: "Transformo necessidades reais em funcionalidades como carrinho, fila, painel, status, autenticação e histórico.",
+  },
+  {
+    title: "Projeto completo",
+    text: "Busco entregar frontend, backend, banco de dados, README, deploy e apresentação visual para o projeto contar uma história.",
+  },
 ];
 
 const timeline = [
@@ -142,10 +179,20 @@ const videoDemos = [
 ];
 
 function App() {
+  const [activeVideo, setActiveVideo] =
+    useState<(typeof videoDemos)[number] | null>(null);
+
+  const openProjectVideo = (title: string) => {
+    const demo = videoDemos.find((video) => video.title === title);
+    if (demo) {
+      setActiveVideo(demo);
+    }
+  };
+
   return (
     <main>
       <header className="site-header">
-        <a className="site-logo" href="#top" aria-label="Voltar ao inicio">
+        <a className="site-logo" href="#top" aria-label="Voltar ao início">
           <span>LS</span>
           Lucas Souza
         </a>
@@ -206,10 +253,24 @@ function App() {
             <span>com cara de</span> <span>produto real.</span>
           </h1>
           <p className="hero-text">
-            Sou Lucas Souza, do Rio de Janeiro. Venho de uma trajetória em TI,
-            suporte e infraestrutura, e hoje estou focado em desenvolvimento com
-            React, TypeScript, Node.js e banco de dados.
+            <span>Sou Lucas Souza, do Rio de Janeiro.</span>
+            <span>Venho de uma trajetória em TI,</span>
+            <span>suporte e infraestrutura.</span>
+            <span>Hoje estou focado em React, TypeScript,</span>
+            <span>Node.js e banco de dados.</span>
           </p>
+
+          <div className="hero-proof" aria-label="Destaques profissionais">
+            <span>
+              <Sparkles size={16} /> Portfolio online
+            </span>
+            <span>
+              <ShieldCheck size={16} /> Projetos com código aberto
+            </span>
+            <span>
+              <PlayCircle size={16} /> Demos em vídeo
+            </span>
+          </div>
 
           <div className="hero-meta" aria-label="Informações rápidas">
             <span>
@@ -223,7 +284,7 @@ function App() {
           <div className="hero-stats" aria-label="Resumo do portfolio">
             <span>
               <strong>4+</strong>
-              Projetos
+              Projetos completos
             </span>
             <span>
               <strong>2</strong>
@@ -237,10 +298,14 @@ function App() {
         </div>
 
         <div className="profile-card" aria-label="Foto e resumo de Lucas Souza">
+          <div className="profile-strip">
+            <span>Open to work</span>
+            <span>Junior</span>
+          </div>
           <div className="photo-frame">
             <img src="./lucas-photo.png" alt="Foto de Lucas Souza" />
           </div>
-          <div>
+          <div className="profile-info">
             <strong>Lucas Souza</strong>
             <span>Full Stack Júnior</span>
           </div>
@@ -295,14 +360,31 @@ function App() {
           <h2>Tecnologias que venho usando nos meus projetos.</h2>
           <p>
             Meu foco atual é criar aplicações completas: interface responsiva,
-            backend organizado, autenticação, banco de dados, regras de
-            negócio e deploy.
+            backend organizado, autenticação, banco de dados, regras de negócio
+            e deploy.
           </p>
         </div>
 
-        <div className="skills-grid" aria-label="Lista de competencias">
+        <div className="skills-grid" aria-label="Lista de competências">
           {skills.map((skill) => (
             <span key={skill}>{skill}</span>
+          ))}
+        </div>
+      </section>
+
+      <section className="section value-section">
+        <div className="section-heading">
+          <p className="eyebrow">Como eu penso produto</p>
+          <h2>Não é só tela bonita: eu tento resolver o fluxo inteiro.</h2>
+        </div>
+
+        <div className="value-grid">
+          {valueCards.map((card, index) => (
+            <article className="value-card" key={card.title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{card.title}</h3>
+              <p>{card.text}</p>
+            </article>
           ))}
         </div>
       </section>
@@ -316,35 +398,54 @@ function App() {
         <div className="projects-grid">
           {projects.map((project) => (
             <article className="project-card" key={project.title}>
-              <img
-                className="project-image"
-                src={project.image}
-                alt={`Preview visual do projeto ${project.title}`}
-              />
-              <div className="project-topline">
-                <span>
-                  <BriefcaseBusiness size={18} /> {project.type}
-                </span>
-                <a href={project.link} target="_blank" rel="noreferrer" aria-label={`Abrir ${project.title} no GitHub`}>
-                  <ArrowUpRight size={20} />
-                </a>
+              <div className="project-image-wrap">
+                <img
+                  className="project-image"
+                  src={project.image}
+                  alt={`Preview visual do projeto ${project.title}`}
+                />
               </div>
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <div className="stack-list">
-                {project.stack.map((tech) => (
-                  <span key={tech}>{tech}</span>
-                ))}
-              </div>
-              <div className="project-actions">
-                <a href={project.link} target="_blank" rel="noreferrer">
-                  <Github size={17} /> Código
-                </a>
-                {project.video ? (
-                  <a href={project.video} target="_blank" rel="noreferrer">
-                    <Film size={17} /> Vídeo
+              <div className="project-content">
+                <div className="project-topline">
+                  <span>
+                    <BriefcaseBusiness size={18} /> {project.type}
+                  </span>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Abrir ${project.title} no GitHub`}
+                  >
+                    <ArrowUpRight size={20} />
                   </a>
-                ) : null}
+                </div>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <ul className="project-impact">
+                  {project.highlights.map((highlight) => (
+                    <li key={highlight}>
+                      <CheckCircle2 size={16} />
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
+                <div className="stack-list">
+                  {project.stack.map((tech) => (
+                    <span key={tech}>{tech}</span>
+                  ))}
+                </div>
+                <div className="project-actions">
+                  <a href={project.link} target="_blank" rel="noreferrer">
+                    <Github size={17} /> Código
+                  </a>
+                  <button
+                    className="video-trigger"
+                    type="button"
+                    onClick={() => openProjectVideo(project.title)}
+                  >
+                    <Film size={17} /> Vídeo
+                  </button>
+                </div>
               </div>
             </article>
           ))}
@@ -364,19 +465,26 @@ function App() {
         <div className="videos-grid">
           {videoDemos.map((demo) => (
             <article className="video-card" key={demo.title}>
-              <video controls preload="metadata" playsInline poster={demo.poster}>
-                <source src={demo.src} type="video/mp4" />
-                Seu navegador não suporta vídeo HTML5.
-              </video>
+              <button
+                className="video-preview"
+                type="button"
+                onClick={() => setActiveVideo(demo)}
+                aria-label={`Assistir vídeo do projeto ${demo.title}`}
+              >
+                <img src={demo.poster} alt={`Preview do vídeo ${demo.title}`} />
+                <span>
+                  <PlayCircle size={46} />
+                </span>
+              </button>
               <div>
                 <span>
                   <Film size={18} /> Vídeo demo
                 </span>
                 <h3>{demo.title}</h3>
                 <p>{demo.description}</p>
-                <a href={demo.src} target="_blank" rel="noreferrer">
-                  Abrir video <ArrowUpRight size={16} />
-                </a>
+                <button type="button" onClick={() => setActiveVideo(demo)}>
+                  Assistir demo <ArrowUpRight size={16} />
+                </button>
               </div>
             </article>
           ))}
@@ -404,11 +512,7 @@ function App() {
                 <p>{certificate.description}</p>
                 <small>Arquivo oficial anexado.</small>
                 <div className="certificate-actions">
-                  <a
-                    href={certificate.file}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
+                  <a href={certificate.file} target="_blank" rel="noreferrer">
                     <Eye size={16} /> Ver PDF
                   </a>
                   <a href={certificate.file} download>
@@ -426,7 +530,7 @@ function App() {
           <p className="eyebrow">Contato</p>
           <h2>Vamos conversar sobre oportunidades e projetos.</h2>
           <p>
-            Estou buscando evoluir como desenvolvedor junior, participar de
+            Estou buscando evoluir como desenvolvedor júnior, participar de
             projetos reais e construir soluções que resolvam problemas de
             verdade.
           </p>
@@ -434,7 +538,14 @@ function App() {
 
         <div className="contact-actions">
           <a href="mailto:llucas.ab@gmail.com?subject=Contato%20pelo%20portfolio%20-%20Lucas%20Souza&body=Ola%20Lucas%2C%20vi%20seu%20portfolio%20e%20gostaria%20de%20conversar.">
-            <Mail size={18} /> Enviar e-mail
+            <Mail size={18} /> E-mail
+          </a>
+          <a
+            href="https://wa.me/5521982507512"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <MessageCircle size={18} /> WhatsApp
           </a>
           <a
             href="https://www.linkedin.com/in/lucas-souza-52422b160/"
@@ -459,6 +570,43 @@ function App() {
           trajetória e stack de desenvolvimento.
         </span>
       </footer>
+
+      {activeVideo ? (
+        <div
+          className="video-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Vídeo do projeto ${activeVideo.title}`}
+        >
+          <button
+            className="modal-backdrop"
+            type="button"
+            aria-label="Fechar vídeo"
+            onClick={() => setActiveVideo(null)}
+          />
+          <div className="modal-panel">
+            <div className="modal-header">
+              <div>
+                <span>Demonstração</span>
+                <h3>{activeVideo.title}</h3>
+              </div>
+              <button
+                className="modal-close"
+                type="button"
+                onClick={() => setActiveVideo(null)}
+                aria-label="Fechar modal"
+              >
+                <X size={22} />
+              </button>
+            </div>
+            <video controls autoPlay playsInline poster={activeVideo.poster}>
+              <source src={activeVideo.src} type="video/mp4" />
+              Seu navegador não suporta vídeo HTML5.
+            </video>
+            <p>{activeVideo.description}</p>
+          </div>
+        </div>
+      ) : null}
     </main>
   );
 }
