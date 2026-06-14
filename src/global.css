@@ -821,7 +821,7 @@ footer span {
     transform 450ms ease;
 }
 
-.video-preview span {
+.video-card .video-preview span {
   position: absolute;
   inset: 0;
   display: grid;
@@ -829,7 +829,7 @@ footer span {
   color: #fff;
 }
 
-.video-preview svg {
+.video-card .video-preview svg {
   filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.35));
   transition: transform 180ms ease;
 }
