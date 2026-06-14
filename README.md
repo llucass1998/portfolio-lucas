@@ -2,6 +2,10 @@
 
 Portfólio pessoal em React, TypeScript e Vite para apresentar trajetória, stack técnica, projetos e contatos profissionais.
 
+## Site online
+
+[Acessar portfólio publicado](https://portfolio-lucas-jumw.vercel.app/)
+
 ## Tecnologias
 
 - React
