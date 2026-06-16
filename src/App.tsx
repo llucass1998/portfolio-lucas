@@ -110,6 +110,33 @@ const valueCards = [
   },
 ];
 
+const serviceCards = [
+  {
+    icon: BriefcaseBusiness,
+    title: "Sistemas para negócios locais",
+    text: "Transformo rotinas manuais em sistemas web para lojas, barbearias, delivery, atendimento e operações internas.",
+    bullets: ["Login e cadastro", "Painel administrativo", "Fluxo do cliente"],
+  },
+  {
+    icon: ShieldCheck,
+    title: "Painéis administrativos",
+    text: "Crio telas para controlar pedidos, chamados, filas, produtos, status e indicadores importantes para o dono do negócio.",
+    bullets: ["Dashboard", "Filtros e busca", "Controle de status"],
+  },
+  {
+    icon: Sparkles,
+    title: "Sites com cara profissional",
+    text: "Monto páginas institucionais e portfólios com foco em apresentação, contato, serviços, projetos e primeira impressão.",
+    bullets: ["Design responsivo", "WhatsApp e e-mail", "Vitrine de serviços"],
+  },
+  {
+    icon: Code2,
+    title: "Frontend integrado",
+    text: "Conecto interface com banco de dados, autenticação, API e regras de negócio para o projeto parecer produto real.",
+    bullets: ["React", "TypeScript", "Firebase/API"],
+  },
+];
+
 const timeline = [
   {
     icon: Wrench,
@@ -199,6 +226,7 @@ function App() {
 
         <nav aria-label="Navegação principal">
           <a href="#top">Início</a>
+          <a href="#servicos">Serviços</a>
           <a href="#trajetoria">Trajetória</a>
           <a href="#projetos">Projetos</a>
           <a
@@ -254,10 +282,10 @@ function App() {
           </h1>
           <p className="hero-text">
             <span>Sou Lucas Souza, do Rio de Janeiro.</span>
-            <span>Venho de uma trajetória em TI,</span>
-            <span>suporte e infraestrutura.</span>
-            <span>Hoje estou focado em React, TypeScript,</span>
-            <span>Node.js e banco de dados.</span>
+            <span>Crio sistemas para organizar atendimento,</span>
+            <span>pedidos, filas e processos internos.</span>
+            <span>Uso React, TypeScript, Node.js e banco de dados</span>
+            <span>para transformar ideia em aplicação funcional.</span>
           </p>
 
           <div className="hero-proof" aria-label="Destaques profissionais">
@@ -309,6 +337,42 @@ function App() {
             <strong>Lucas Souza</strong>
             <span>Full Stack Júnior</span>
           </div>
+        </div>
+      </section>
+
+      <section className="section services-section" id="servicos">
+        <div className="section-heading">
+          <p className="eyebrow">O que eu posso entregar</p>
+          <h2>Soluções simples, visuais e úteis para empresas locais.</h2>
+          <p>
+            Meu foco é construir sistemas que resolvem uma necessidade clara:
+            controlar pedidos, filas, chamados, cadastros, status e informações
+            que hoje ficam espalhadas.
+          </p>
+        </div>
+
+        <div className="services-grid">
+          {serviceCards.map((service) => {
+            const Icon = service.icon;
+
+            return (
+              <article className="service-card" key={service.title}>
+                <div className="service-card-head">
+                  <Icon size={24} />
+                  <h3>{service.title}</h3>
+                </div>
+                <p>{service.text}</p>
+                <ul>
+                  {service.bullets.map((bullet) => (
+                    <li key={bullet}>
+                      <CheckCircle2 size={16} />
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            );
+          })}
         </div>
       </section>
 
@@ -452,6 +516,31 @@ function App() {
         </div>
       </section>
 
+      <section className="section business-cta">
+        <div>
+          <p className="eyebrow">Projetos com objetivo real</p>
+          <h2>Precisa de um sistema para organizar um negócio?</h2>
+          <p>
+            Posso ajudar a transformar uma ideia em uma primeira versão funcional:
+            tela do cliente, painel administrativo, banco de dados, fluxo de status
+            e uma apresentação clara para testar com usuários reais.
+          </p>
+        </div>
+
+        <div className="business-cta-actions">
+          <a
+            href="https://wa.me/5521982507512?text=Ol%C3%A1%20Lucas%2C%20vi%20seu%20portf%C3%B3lio%20e%20queria%20conversar%20sobre%20um%20projeto."
+            target="_blank"
+            rel="noreferrer"
+          >
+            <MessageCircle size={18} /> Conversar no WhatsApp
+          </a>
+          <a href="#projetos">
+            <Eye size={18} /> Ver cases
+          </a>
+        </div>
+      </section>
+
       <section className="section videos-section">
         <div className="section-heading">
           <p className="eyebrow">Demonstrações</p>
@@ -530,9 +619,9 @@ function App() {
           <p className="eyebrow">Contato</p>
           <h2>Vamos conversar sobre oportunidades e projetos.</h2>
           <p>
-            Estou buscando evoluir como desenvolvedor júnior, participar de
-            projetos reais e construir soluções que resolvam problemas de
-            verdade.
+            Estou aberto para oportunidades júnior, projetos freelancer e
+            parcerias com negócios locais que precisam de um sistema web simples,
+            bonito e funcional.
           </p>
         </div>
 
