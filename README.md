@@ -1,92 +1,145 @@
-# Portfólio Lucas Souza
+<h1 align="center">Olá 👋, eu sou Lucas de Souza Furtado Mendonça</h1>
 
-Portfólio pessoal em React, TypeScript e Vite para apresentar trajetória, stack técnica, projetos e contatos profissionais.
+<p align="center">
+  Desenvolvedor Full Stack Júnior em formação, com foco em aplicações web modernas, APIs REST, banco de dados, dashboards e sistemas comerciais reais.
+</p>
 
-## Site online
+<p align="center">
+  <a href="https://portfolio-lucas-jumw.vercel.app/" target="_blank">Portfólio</a> •
+  <a href="https://github.com/llucass1998" target="_blank">GitHub</a> •
+  <a href="https://www.linkedin.com/in/lucas-souza-52422b160/" target="_blank">LinkedIn</a> •
+  <a href="mailto:llucas.ab@gmail.com" target="_blank">E-mail</a>
+</p>
 
-[Acessar portfólio publicado](https://portfolio-lucas-jumw.vercel.app/)
+---
 
-## Tecnologias
+## 🚀 Sobre mim
 
-- React
-- TypeScript
-- Vite
-- CSS responsivo
-- Lucide React
+Sou formado como **Técnico em TI pelo Senac Madureira**, cursei **Análise e Desenvolvimento de Sistemas na Universidade Veiga de Almeida** e atualmente estou cursando **Bacharelado em Engenharia de Software na Universidade Cruzeiro do Sul**.
 
-## Rodar localmente
+Tenho desenvolvido projetos práticos com foco em **Full Stack**, utilizando tecnologias como **React, TypeScript, Node.js, Express, Prisma, PostgreSQL, Tailwind CSS, Docker e Git/GitHub**.
 
-```bash
-npm install
-npm run dev
-```
+Minha evolução no GitHub mostra a passagem de projetos iniciais com HTML, CSS e JavaScript para sistemas completos com **frontend, backend, banco de dados, autenticação, dashboard, testes, deploy e documentação**.
 
-## Gerar build
+---
 
-```bash
-npm run build
-```
+## 🛠️ Tecnologias e Ferramentas
 
-O build final fica na pasta `dist`.
+### Frontend
 
-## Trocar a foto
+<p>
+  <img src="https://skillicons.dev/icons?i=react,nextjs,js,ts,html,css,tailwind,vite" />
+</p>
 
-Substitua o arquivo:
+### Backend
 
-```text
-public/lucas-photo.png
-```
+<p>
+  <img src="https://skillicons.dev/icons?i=nodejs,express,prisma" />
+</p>
 
-Mantenha o mesmo nome para a página usar a nova imagem automaticamente.
+### Banco de Dados e Infraestrutura
 
-## Trocar prints dos projetos
+<p>
+  <img src="https://skillicons.dev/icons?i=postgres,mysql,docker,nginx" />
+</p>
 
-Substitua os arquivos em:
+### Ferramentas
 
-```text
-public/projects/
-```
+<p>
+  <img src="https://skillicons.dev/icons?i=git,github,vscode,figma" />
+</p>
 
-Arquivos usados hoje:
+---
 
-- `sistema-chamados-screen.png`
-- `street-foods-screen.png`
-- `tdb-barbearia-screen.png`
-- `logistica-screen.png`
+# ⭐ Projetos em Destaque
 
-Você pode trocar por PNG/JPG reais mantendo o mesmo nome no `src/App.tsx`.
+## 🍕 Sistema Pizzaria Lucas — ERP/Delivery Full Stack
 
-## Trocar currículo
+Sistema full stack para pizzarias e restaurantes, com frente de loja, cardápio digital, carrinho, checkout, painel administrativo, pedidos, produtos, financeiro, logística/entregadores e deploy em ambiente real.
 
-Substitua:
+**Destaques técnicos:**
 
-```text
-public/curriculo-lucas-souza.pdf
-```
+- Frontend responsivo com React, Vite e Tailwind CSS.
+- Backend com Node.js, Express e TypeScript.
+- Banco de dados PostgreSQL com Prisma ORM.
+- Painel administrativo para gestão de produtos, pedidos e dados da loja.
+- Fluxo de pedidos com entrega/retirada e formas de pagamento.
+- Estrutura com testes, typecheck, Docker e deploy.
 
-## Trocar certificados
+**Links:**
 
-Coloque os arquivos oficiais em:
+- Produção: [pizzarialucas.istigestao.com.br](https://pizzarialucas.istigestao.com.br/)
+- Repositório: [github.com/llucass1998/sistema-pizzaria](https://github.com/llucass1998/sistema-pizzaria)
 
-```text
-public/certificados/
-```
+**Tecnologias:** React • Vite • TypeScript • Node.js • Express • Prisma • PostgreSQL • Tailwind CSS • Docker • Vitest • Playwright
 
-Depois atualize os caminhos em `src/App.tsx` se quiser exibir os PDFs/imagens reais no site.
+---
 
-## Trocar vídeos dos projetos
+## 🚚 Sistema de Gestão Logística
 
-Os vídeos ficam em:
+Sistema full stack para controle de entregas, motoristas e veículos, com painel administrativo, dashboard de indicadores, autenticação JWT, API REST e acompanhamento operacional.
 
-```text
-public/videos/
-```
+**Destaques técnicos:**
 
-Arquivos usados hoje:
+- Cadastro e gerenciamento de motoristas, veículos e entregas.
+- Atualização de status operacional.
+- Dashboard com métricas e gráficos.
+- Backend com Node.js, Express, Prisma e PostgreSQL.
+- Frontend com Next.js, React, TypeScript e Tailwind CSS.
 
-- `projeto-next.mp4`
-- `sistema-chamados.mp4`
-- `street-foods.mp4`
-- `tdb-barbearia.mp4`
+**Repositório:** [github.com/llucass1998/sistema-gestao-logistica](https://github.com/llucass1998/sistema-gestao-logistica)
 
-Eles aparecem na seção "Demonstrações" e também como botão nos cards dos projetos.
+**Tecnologias:** Next.js • React • TypeScript • Node.js • Express • Prisma • PostgreSQL • JWT • Recharts • Leaflet
+
+---
+
+## 🌐 Portfólio Lucas Souza
+
+Portfólio pessoal para apresentação profissional, projetos, tecnologias e links de contato.
+
+**Link:** [portfolio-lucas-jumw.vercel.app](https://portfolio-lucas-jumw.vercel.app/)
+
+**Tecnologias:** React • Tailwind CSS • Vercel
+
+---
+
+## 📚 Atualmente estudando
+
+- Engenharia de Software
+- TypeScript avançado
+- React e Next.js
+- Node.js e APIs REST
+- PostgreSQL e Prisma
+- Docker e deploy
+- Testes automatizados
+- Inglês técnico para tecnologia
+
+---
+
+## 📬 Contato
+
+<p align="left">
+  <a href="https://www.linkedin.com/in/lucas-souza-52422b160/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  </a>
+
+  <a href="mailto:llucas.ab@gmail.com" target="_blank">
+    <img src="https://img.shields.io/badge/E--mail-llucas.ab%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
+  </a>
+
+  <a href="https://wa.me/5521982507512" target="_blank">
+    <img src="https://img.shields.io/badge/WhatsApp-21%2098250--7512-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/>
+  </a>
+
+  <a href="https://portfolio-lucas-jumw.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Portfolio-Online-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
+  </a>
+</p>
+
+---
+
+<div align="center">
+
+### ⭐ Evoluindo de projetos de estudo para aplicações full stack reais.
+
+</div>
